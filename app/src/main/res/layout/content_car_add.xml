@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".HomeFeature.CarAddFeature.CarAddActivity"
+    tools:showIn="@layout/activity_car_add">
+
+    <ScrollView
+        android:id="@+id/login_form"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Добавить автомобиль"
+                    android:textSize="14pt"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/AddCarLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Марка автомобиля:"
+                android:textSize="11pt" />
+
+            <EditText
+                android:id="@+id/AddCarModel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Модель автомобиля:"
+                android:textSize="11pt" />
+
+            <EditText
+                android:id="@+id/AddCarCost"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Стоимость автомобиля:"
+                android:inputType="numberDecimal"
+                android:textSize="11pt" />
+
+            <EditText
+                android:id="@+id/AddCarRent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Стоимость аренды:"
+                android:inputType="numberDecimal"
+                android:textSize="11pt" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/AddCarYes"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Применить"
+                    android:textSize="11pt" />
+
+                <Button
+                    android:id="@+id/AddCarNo"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Отмена"
+                    android:textSize="11pt" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>
