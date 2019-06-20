@@ -10,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.widget.FrameLayout;
 
 import com.example.northlordv2.HomeFeature.HomeFragment;
+import com.example.northlordv2.LastRentsFeature.LastRentsFragment;
 import com.example.northlordv2.ProfileFeature.ProfileFragment;
 import com.example.northlordv2.R;
 import com.example.northlordv2.application.Northlord;
@@ -33,7 +34,8 @@ public class MainActivity extends AppCompatActivity {
     HomeFragment homeFragment;
     @Inject
     ProfileFragment profileFragment;
-
+    @Inject
+    LastRentsFragment lastRentsFragment;
 
 
     @Override
@@ -48,16 +50,7 @@ public class MainActivity extends AppCompatActivity {
         //ButterKnife.bind(this);
         BottomNavigationView navView = findViewById(R.id.nav_view);
         navView.setOnNavigationItemSelectedListener(s -> {
-            switch (s.getItemId()) {
-                case R.id.navigation_last_rents:
-                    break;
-                case R.id.navigation_home:
-                    showFragment(R.id.navigation_home);
-                    break;
-                case R.id.navigation_profile:
-                    showFragment(s.getItemId());
-                    break;
-            }
+            showFragment(s.getItemId());
             return true;
         });
     }
@@ -72,10 +65,17 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
+    @Override
+    public void onBackPressed() {
+
+    }
+
     public void showFragment(int itemId) {
         Fragment fragment = null;
         switch (itemId) {
             case R.id.navigation_last_rents:
+                fragment=lastRentsFragment;
                 break;
             case R.id.navigation_home:
                 fragment = homeFragment;

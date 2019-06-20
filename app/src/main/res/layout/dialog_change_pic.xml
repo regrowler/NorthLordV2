@@ -4,24 +4,31 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/colorPrimary"
+    android:padding="7dp"
     android:layout_height="match_parent">
 
-    <Button
+    <TextView
         android:id="@+id/dialogChangePictureTakePhotoButton"
-        android:layout_width="300dp"
+        android:layout_width="220dp"
         android:layout_height="wrap_content"
-        android:text="Сделать фото"
-        android:layout_margin="20dp"
+        android:text="@string/activity_change_pic_dialog_button_take_photo"
+        android:textSize="25sp"
+        android:textColor="@android:color/white"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <TextView
         android:id="@+id/dialogChangePictureGetFromGalleryButton"
-        android:layout_width="300dp"
-        android:layout_margin="20dp"
+        android:layout_width="220dp"
         android:layout_height="wrap_content"
-        android:text="Открыть галерею"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="@string/activity_change_pic_dialog_button_from_gallery"
+        android:textColor="@android:color/white"
+        android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dialogChangePictureTakePhotoButton" />

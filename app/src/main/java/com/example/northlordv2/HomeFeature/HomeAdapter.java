@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.example.northlordv2.HomeFeature.CarFeature.Car;
 import com.example.northlordv2.HomeFeature.CarFeature.CarIndoActivity;
 import com.example.northlordv2.R;
+import com.example.northlordv2.application.NumberPointMaker;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -77,7 +78,7 @@ public class HomeAdapter extends RecyclerView.Adapter {
         });
         viewHolder1.label.setText(car.getLabel());
         viewHolder1.model.setText(" "+car.getModel());
-        viewHolder1.rent.setText(""+car.getRentcost());
+        viewHolder1.rent.setText(NumberPointMaker.makePoints(""+car.getRentcost()));
     }
 
     @Override

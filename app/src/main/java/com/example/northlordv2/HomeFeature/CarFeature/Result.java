@@ -52,7 +52,11 @@ public class Result {
     public void setPassword(String password) {
         this.password = password;
     }
-
+    public void decode(){
+        for (Car car:cars){
+            car.decode();
+        }
+    }
     public Result(List<Car> cars, String login, String password) {
         this.cars = cars;
         this.login = login;

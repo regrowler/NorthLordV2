@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.northlordv2.R;
 
@@ -17,9 +18,9 @@ import butterknife.Unbinder;
 
 public class ChangePictureDialog extends DialogFragment {
     @BindView(R.id.dialogChangePictureTakePhotoButton)
-    Button dialogChangePictureTakePhotoButton;
+    TextView dialogChangePictureTakePhotoButton;
     @BindView(R.id.dialogChangePictureGetFromGalleryButton)
-    Button dialogChangePictureGetFromGalleryButton;
+    TextView dialogChangePictureGetFromGalleryButton;
     Unbinder unbinder;
 
     Listener takePhotoListener;

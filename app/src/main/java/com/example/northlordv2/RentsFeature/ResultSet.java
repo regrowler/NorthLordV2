@@ -30,7 +30,11 @@ public class ResultSet {
         this.result = result;
         this.rents = rents;
     }
-
+    public void decode(){
+        for(Result result:rents){
+            result.decode();
+        }
+    }
     @SerializedName("rents")
     @Expose
     private List<Result> rents;

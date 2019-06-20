@@ -1,6 +1,8 @@
 package com.example.northlordv2.HomeFeature;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -91,6 +93,8 @@ public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefre
                     })
                     .subscribe(s -> {
                         if (s.getRes().equals("success")) {
+                            s.decode();
+                            s.decode();
                             swipeContainer.setRefreshing(false);
                             adapter.setData(s.getCars(),deletebutton);
                             listItem.setAdapter(adapter);
@@ -122,32 +126,47 @@ public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefre
             case R.id.deletebutton:
                 deletebutton.setVisibility(View.GONE);
                 List<Car> list=adapter.getChecked();
-                try {
-                    String l = Northlord.getApplication(getActivity()).getData().getLogin();
-                    String p = Northlord.getApplication(getActivity()).getData().getPassword();
-                    String log = URLEncoder.encode(l, "UTF-8");
-                    String pass = URLEncoder.encode(p, "UTF-8");
-                    JSONArray array=new JSONArray();
-                    for(Car car:list){
-                        array.put(car.getId());
-                    }
-                    api
-                            .deleteCars(log,pass,array.toString())
-                            .subscribeOn(Schedulers.io())
-                            .observeOn(AndroidSchedulers.mainThread())
-                            .doOnError(s -> {
-                                swipeContainer.setRefreshing(false);
-                            })
-                            .subscribe(s -> {
-                                if (s.getRes().equals("success")) {
-                                    update();
+                AlertDialog.Builder builder=new AlertDialog.Builder(getContext());
+                builder.setTitle(R.string.dialog_delete_cars_title);
+                builder.setMessage(R.string.dialog_delete_cars_message);
+                builder.setPositiveButton(R.string.dialog_delete_cars_yes, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        try {
+                            String l = Northlord.getApplication(getActivity()).getData().getLogin();
+                            String p = Northlord.getApplication(getActivity()).getData().getPassword();
+                            String log = URLEncoder.encode(l, "UTF-8");
+                            String pass = URLEncoder.encode(p, "UTF-8");
+                            JSONArray array=new JSONArray();
+                            for(Car car:list){
+                                array.put(car.getId());
+                            }
+                            api
+                                    .deleteCars(log,pass,array.toString())
+                                    .subscribeOn(Schedulers.io())
+                                    .observeOn(AndroidSchedulers.mainThread())
+                                    .doOnError(s -> {
+                                        swipeContainer.setRefreshing(false);
+                                    })
+                                    .subscribe(s -> {
+                                        if (s.getRes().equals("success")) {
+                                            update();
 
-                                }
-                                s.getRes();
-                            }, Throwable::printStackTrace);
-                } catch (Exception e) {
-                    swipeContainer.setRefreshing(false);
-                }
+                                        }
+                                        s.getRes();
+                                    }, Throwable::printStackTrace);
+                        } catch (Exception e) {
+                            swipeContainer.setRefreshing(false);
+                        }
+                    }
+                });
+                builder.setNegativeButton(R.string.dialog_delete_cars_no, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        update();
+                    }
+                });
+                builder.create().show();
                 break;
             case R.id.fab:
                 getActivity().startActivity(new Intent(getContext(), CarAddActivity.class));

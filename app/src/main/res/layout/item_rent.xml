@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/itemgen"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="10px"
-    android:background="@color/place"
-    android:id="@+id/itemgeneral">
+    android:layout_height="wrap_content">
 
     <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_toLeftOf="@+id/items">
 
         <RelativeLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="10dp">
 
             <TextView
-                android:id="@+id/itemlabel"
+                android:id="@+id/rentitemName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="11pt" />
 
             <TextView
-                android:id="@+id/itemmodel"
-                android:layout_width="match_parent"
+                android:id="@+id/rentitemStartDate"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/itemlabel"
+                android:layout_alignParentRight="true"
                 android:textSize="11pt" />
         </RelativeLayout>
 
         <RelativeLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="10dp">
+            android:paddingLeft="10dp"
+            >
 
             <TextView
-                android:id="@+id/itemtext"
+                android:id="@+id/rentitemCost"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/item_car_text_rent"
@@ -44,20 +44,25 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/itemrent"
-                android:layout_width="match_parent"
+                android:id="@+id/rentitemEndDate"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/itemtext"
-                android:textSize="11pt"
-                android:textStyle="bold" />
+                android:layout_alignParentRight="true"
+                android:textSize="11pt" />
         </RelativeLayout>
     </LinearLayout>
-    <CheckBox
+    <LinearLayout
+        android:id="@+id/items"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_centerInParent="true"
         android:layout_marginLeft="8dp"
-        android:layout_marginRight="15px"
-        android:id="@+id/itemcheck"/>
+        android:layout_marginRight="15px">
+        <CheckBox
+            android:id="@+id/itemcheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
 </RelativeLayout>

@@ -3,6 +3,8 @@ package com.example.northlordv2.ProfileFeature;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.net.URLDecoder;
+
 public class Result {
     @SerializedName("name")
     String name;
@@ -16,7 +18,16 @@ public class Result {
     int profit;
     @SerializedName("result")
     String result;
+    public void decode(){
+        try {
+            name= URLDecoder.decode(name,"UTF-8");
+            surname= URLDecoder.decode(surname,"UTF-8");
+            email= URLDecoder.decode(email,"UTF-8");
+        }catch (Exception e){
+            e.printStackTrace();
+        }
 
+    }
     public Result(String name, String surname, String email, int cars, int profit, String result) {
         this.name = name;
         this.surname = surname;

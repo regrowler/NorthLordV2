@@ -19,6 +19,8 @@ import com.example.northlordv2.application.DataModule;
 import com.example.northlordv2.application.Northlord;
 import com.example.northlordv2.inter.LoginFeature.Api;
 
+import java.net.URLEncoder;
+
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -62,15 +64,15 @@ public class SignUpActivity extends AppCompatActivity {
         init();
         EditTextObservable.getObservable(login)
                 .subscribe(s -> {
-                    log = s;
+                    log = URLEncoder.encode(s,"UTF-8");
                 }, Throwable::printStackTrace);
         EditTextObservable.getObservable(password)
                 .subscribe(s -> {
-                    pass = s;
+                    pass = URLEncoder.encode(s,"UTF-8");;
                 }, Throwable::printStackTrace);
         EditTextObservable.getObservable(confirmpassword)
                 .subscribe(s -> {
-                    confirm = s;
+                    confirm = URLEncoder.encode(s,"UTF-8");;
                 }, Throwable::printStackTrace);
     }
 

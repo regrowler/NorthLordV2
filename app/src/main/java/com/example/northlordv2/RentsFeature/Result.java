@@ -3,6 +3,8 @@ package com.example.northlordv2.RentsFeature;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.net.URLDecoder;
+
 public class Result {
     @SerializedName("name")
     @Expose
@@ -10,6 +12,9 @@ public class Result {
     @SerializedName("id")
     @Expose
     int  id;
+    @SerializedName("carid")
+    @Expose
+    int carid;
     @SerializedName("startdate")
     @Expose
     String startdate;
@@ -24,15 +29,25 @@ public class Result {
     String endtime;
     @SerializedName("cost")
     @Expose
-    String cost;
+    int cost;
     @SerializedName("label")
     @Expose
     String label;
     @SerializedName("model")
     @Expose
     String model;
+    public  void decode(){
+        try {
+            this.name=URLDecoder.decode(name,"UTF-8");
+            this.label=URLDecoder.decode(label,"UTF-8");
+            this.model=URLDecoder.decode(model,"UTF-8");
 
-    public Result(String name, int id, String startdate, String starttime, String enddate, String endtime, String cost, String label, String model) {
+        }catch (Exception e){
+
+        }
+
+    }
+    public Result(String name, int id, String startdate, String starttime, String enddate, String endtime, int cost, String label, String model) {
         this.name = name;
         this.id = id;
         this.startdate = startdate;
@@ -92,11 +107,11 @@ public class Result {
         this.endtime = endtime;
     }
 
-    public String getCost() {
+    public int getCost() {
         return cost;
     }
 
-    public void setCost(String cost) {
+    public void setCost(int cost) {
         this.cost = cost;
     }
 

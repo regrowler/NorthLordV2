@@ -9,10 +9,31 @@
     tools:context=".HomeFeature.CarFeature.CarIndoActivity"
     tools:showIn="@layout/activity_car_indo"
     android:paddingTop="28dp">
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/list_rent"
+    <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layoutManager="LinearLayoutManager" />
+        android:layout_height="match_parent">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/list_rent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="LinearLayoutManager" />
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:id="@+id/deletebutton"
+                android:visibility="gone"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/button"
+                android:src="@drawable/ic_trash"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.508"
+                app:layout_constraintStart_toStartOf="parent" />
+        </android.support.constraint.ConstraintLayout>
+    </android.support.design.widget.CoordinatorLayout>
+
 </android.support.v4.widget.SwipeRefreshLayout>

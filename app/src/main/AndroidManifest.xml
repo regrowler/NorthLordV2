@@ -12,25 +12,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".RentsFeature.AddRentActivity"></activity>
         <activity
             android:name=".HomeFeature.CarFeature.CarIndoActivity"
-            android:label="@string/title_activity_car_indo"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ProfileFeature.EditProfileActivity"
-            android:label="@string/title_activity_edit_profile"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".HomeFeature.CarAddFeature.CarAddActivity"
-            android:label="@string/title_activity_car_add"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".MainActivityFeature.MainActivity"
-            android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".LoginActivityFeature.SignUpActivity"
-            android:label="@string/title_activity_sign_up"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".LoginActivityFeature.LoginActivity">
             <intent-filter>

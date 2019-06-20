@@ -2,7 +2,7 @@ package com.example.northlordv2.RentsFeature;
 
 import java.util.GregorianCalendar;
 
-public class Rent {
+public class LastRent {
     int id;
     int carid;
     String name;
@@ -10,47 +10,21 @@ public class Rent {
     GregorianCalendar end;
     int cost;
     boolean checked = false;
+    String label;
+    String model;
 
-    public boolean isChecked() {
-        return checked;
-    }
-
-    public void setChecked(boolean in) {
-        checked = in;
-    }
-
-
-    public int id() {
-        return id;
-    }
-
-    public Rent() {
-        id = -1;
-        carid=-1;
-        name = "";
-        start = new GregorianCalendar();
-        end = new GregorianCalendar();
-    }
-
-    public Rent(String name) {
+    public LastRent(int id, String name, GregorianCalendar start, GregorianCalendar end, int cost, boolean checked, String label, String model) {
+        this.id = id;
         this.name = name;
-    }
-
-    public Rent(String name, GregorianCalendar start, GregorianCalendar end) {
-        this.start = start;
-        this.end = end;
-        this.name = name;
-    }
-
-    public Rent(String name, GregorianCalendar start, GregorianCalendar end, int cost, int id) {
         this.start = start;
         this.end = end;
         this.cost = cost;
-        this.name = name;
-        this.id = id;
+        this.checked = checked;
+        this.label = label;
+        this.model = model;
+        carid=-1;
     }
-
-    public Rent(Result result) {
+    public LastRent(Result result){
         name = result.name;
         id = result.id;
         cost = result.cost;
@@ -64,6 +38,8 @@ public class Rent {
         e.set(Integer.parseInt(ed[2]), Integer.parseInt(ed[1]), Integer.parseInt(ed[0]), Integer.parseInt(et[0]), Integer.parseInt(et[1]));
         start = s;
         end = e;
+        model=result.getModel();
+        label=result.getLabel();
         carid=result.carid;
     }
 
@@ -113,5 +89,29 @@ public class Rent {
 
     public void setCost(int cost) {
         this.cost = cost;
+    }
+
+    public boolean isChecked() {
+        return checked;
+    }
+
+    public void setChecked(boolean checked) {
+        this.checked = checked;
+    }
+
+    public String getLabel() {
+        return label;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
     }
 }

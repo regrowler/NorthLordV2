@@ -18,6 +18,8 @@ import com.example.northlordv2.inter.MainActivityComponent;
 //import com.example.northlordv2.inter.ProfileFeature.DaggerEditProfileActivityComponent;
 import com.example.northlordv2.inter.ProfileFeature.DaggerProfileFragmentComponent;
 import com.example.northlordv2.inter.ProfileFeature.EditProfileActivityComponent;
+import com.example.northlordv2.inter.RentsFeature.AddAndEditRentActivityComponent;
+import com.example.northlordv2.inter.RentsFeature.DaggerAddAndEditRentActivityComponent;
 
 import io.reactivex.plugins.RxJavaPlugins;
 
@@ -27,6 +29,15 @@ public class Northlord extends MultiDexApplication {
     private EditProfileActivityComponent editProfileActivityComponent;
     private CarAddActivityComponent carAddActivityComponent;
     private CarInfoActivityComponent carInfoActivityComponent;
+    private AddAndEditRentActivityComponent addAndEditRentActivityComponent;
+
+    public AddAndEditRentActivityComponent getAddAndEditRentActivityComponent() {
+        return addAndEditRentActivityComponent;
+    }
+
+    public void setAddAndEditRentActivityComponent(AddAndEditRentActivityComponent addAndEditRentActivityComponent) {
+        this.addAndEditRentActivityComponent = addAndEditRentActivityComponent;
+    }
 
     public CarInfoActivityComponent getCarInfoActivityComponent() {
         return carInfoActivityComponent;
@@ -79,6 +90,9 @@ public class Northlord extends MultiDexApplication {
                 .contextModule(module)
                 .build();
         carInfoActivityComponent= DaggerCarInfoActivityComponent.builder()
+                .contextModule(module)
+                .build();
+        addAndEditRentActivityComponent= DaggerAddAndEditRentActivityComponent.builder()
                 .contextModule(module)
                 .build();
 //        editProfileActivityComponent= DaggerEditProfileActivityComponent.builder().contextModule(new ContextModule(this)).build();

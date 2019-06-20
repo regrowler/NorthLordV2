@@ -39,7 +39,7 @@
                         android:id="@+id/CarInfoLabel"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Марка: "
+                        android:text="@string/activity_car_info_label"
                         android:textColor="@color/place"
                         android:textSize="15pt" />
 
@@ -48,7 +48,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_toRightOf="@+id/CarInfoLabel"
-                        android:text="Модель"
+                        android:text="@string/activity_car_info_model"
                         android:textColor="@color/place"
                         android:textSize="15pt" />
                 </RelativeLayout>
@@ -64,7 +64,7 @@
                         android:id="@+id/CarInfoC"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Стоимость: "
+                        android:text="@string/activity_car_info_cost"
                         android:textColor="@color/place"
                         android:textSize="11pt" />
 
@@ -73,7 +73,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_toRightOf="@+id/CarInfoC"
-                        android:text="Cost"
+                        android:text="@string/activity_car_info_cost_value"
                         android:textColor="@color/place"
                         android:textSize="11pt"
                         android:textStyle="bold" />
@@ -90,7 +90,7 @@
                         android:id="@+id/CarInfoR"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Стоимость часа аренды: "
+                        android:text="@string/activity_car_info_rent"
                         android:textColor="@color/place"
                         android:textSize="11pt" />
 
@@ -99,7 +99,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_toRightOf="@+id/CarInfoR"
-                        android:text="Rent"
+                        android:text="@string/activity_car_info_rent_value"
                         android:textColor="@color/place"
                         android:textSize="11pt"
                         android:textStyle="bold" />

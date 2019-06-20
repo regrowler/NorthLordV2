@@ -25,6 +25,7 @@ import com.example.northlordv2.ProfileFeature.ChangePictureFeature.PictureChange
 import com.example.northlordv2.ProfileFeature.ChangePictureFeature.PictureSender;
 import com.example.northlordv2.R;
 import com.example.northlordv2.application.Northlord;
+import com.example.northlordv2.application.NumberPointMaker;
 import com.example.northlordv2.inter.ProfileFeature.PictureApi;
 import com.example.northlordv2.inter.ProfileFeature.ProfileApi;
 import com.squareup.picasso.Callback;
@@ -124,7 +125,7 @@ public class ProfileFragment extends Fragment {
             String log = URLEncoder.encode(l, "UTF-8");
             String pass = URLEncoder.encode(p, "UTF-8");
             api
-                    .getProfile(log, pass)
+                    .getProfile(l, p)
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .doOnError(s -> {
@@ -132,11 +133,12 @@ public class ProfileFragment extends Fragment {
                     })
                     .subscribe(s -> {
                         if (s.getResult().equals("success")) {
+                            s.decode();
                             swipeContainer.setRefreshing(false);
                             profileName.setText(URLDecoder.decode(s.getName() + " " + s.getSurname(), "UTF-8"));
                             profileEmail.setText(URLDecoder.decode(s.getEmail(), "UTF-8"));
-                            profileCount.setText(s.getCars() + "");
-                            profileMoney.setText(s.getProfit() + "");
+                            profileCount.setText(NumberPointMaker.makePoints(s.getCars() + ""));
+                            profileMoney.setText(NumberPointMaker.makePoints(s.getProfit() + ""));
 
                         }
                         //s.getRes();

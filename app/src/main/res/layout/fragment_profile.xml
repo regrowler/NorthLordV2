@@ -34,7 +34,7 @@
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="45dp"
                         android:id="@+id/image"
-                        android:src="@drawable/ic_launcher_foreground" />
+                        android:src="@drawable/ic_face_default" />
 
                     <TextView
                         android:id="@+id/ProfileName"
@@ -42,7 +42,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="10dp"
-                        android:text="Имя"
+                        android:text="@string/fragment_profile_text_name"
                         android:textColor="#fff"
                         android:textSize="21sp"
                         android:textStyle="bold" />
@@ -53,7 +53,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="5dp"
-                        android:text="email"
+                        android:text="@string/fragment_profile_text_email"
                         android:textColor="#fff"
                         android:textSize="15sp"
                         android:textStyle="bold" />
@@ -82,7 +82,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Автомобилей"
+                                android:text="@string/fragment_profile_text_cars"
                                 android:textSize="20sp" />
 
                             <TextView
@@ -90,7 +90,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:paddingTop="10dp"
-                                android:text="125"
+                                android:text="@string/fragment_profile_text_cars_default_value"
                                 android:textColor="@color/colorAccent"
                                 android:textSize="20sp"
                                 android:textStyle="bold" />
@@ -107,7 +107,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Заработано"
+                                android:text="@string/fragment_profile_text_profit"
                                 android:textSize="20sp" />
 
                             <TextView
@@ -115,7 +115,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:paddingTop="10dp"
-                                android:text="360"
+                                android:text="@string/fragment_profile_text_profit_default_value"
                                 android:textColor="@color/colorAccent"
                                 android:textSize="20sp"
                                 android:textStyle="bold" />
@@ -132,7 +132,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="20dp"
                 android:background="@layout/buttonstyle"
-                android:text="Изменить данные"
+                android:text="@string/fragment_profile_button_edit"
                 android:textColor="#fff" />
         </LinearLayout>
     </android.support.v4.widget.SwipeRefreshLayout>

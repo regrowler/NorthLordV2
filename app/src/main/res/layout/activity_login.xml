@@ -33,7 +33,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
-                android:hint="Логин"
+                android:hint="@string/activity_login_hint_login"
                 android:inputType="textEmailAddress"
                 android:maxLines="1"
                 android:singleLine="true"

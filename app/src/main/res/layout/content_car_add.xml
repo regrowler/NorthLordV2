@@ -32,7 +32,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Добавить автомобиль"
+                    android:text="@string/activity_add_car_title"
                     android:textSize="14pt"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -41,21 +41,21 @@
                 android:id="@+id/AddCarLabel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Марка автомобиля:"
+                android:hint="@string/activity_add_car_hint_label"
                 android:textSize="11pt" />
 
             <EditText
                 android:id="@+id/AddCarModel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Модель автомобиля:"
+                android:hint="@string/activity_add_car_hint_model"
                 android:textSize="11pt" />
 
             <EditText
                 android:id="@+id/AddCarCost"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Стоимость автомобиля:"
+                android:hint="@string/activity_add_car_hint_cost"
                 android:inputType="numberDecimal"
                 android:textSize="11pt" />
 
@@ -63,7 +63,7 @@
                 android:id="@+id/AddCarRent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Стоимость аренды:"
+                android:hint="@string/activity_add_car_hine_rent"
                 android:inputType="numberDecimal"
                 android:textSize="11pt" />
 
@@ -77,7 +77,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Применить"
+                    android:text="@string/activity_add_car_button_yes"
                     android:textSize="11pt" />
 
                 <Button
@@ -86,7 +86,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Отмена"
+                    android:text="@string/activity_add_car_button_no"
                     android:textSize="11pt" />
             </LinearLayout>
         </LinearLayout>

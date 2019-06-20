@@ -36,6 +36,7 @@ public class PictureChanger {
 
                     @Override
                     public void onError() {
+                        imageView.setImageResource(R.drawable.ic_face_default);
                         Log.d("pic","err");
                     }
                 });
@@ -47,6 +48,7 @@ public class PictureChanger {
         picasso.with(context)
                 .load(builder.toString())
                 .error(R.drawable.ic_launcher_foreground)
+                .placeholder(context.getDrawable(R.drawable.ic_face_default))
                 .memoryPolicy(MemoryPolicy.NO_CACHE)
                 .into(imageView, new Callback() {
                     @Override
@@ -56,6 +58,7 @@ public class PictureChanger {
 
                     @Override
                     public void onError() {
+                        imageView.setImageResource(R.drawable.ic_face_default);
                         Log.d("pic","err");
                     }
                 });

@@ -2,6 +2,7 @@ package com.example.northlordv2.HomeFeature.CarFeature;
 
 import android.content.Context;
 
+import com.example.northlordv2.ContextModule;
 import com.example.northlordv2.InitialData;
 import com.example.northlordv2.OkHttpClientModule;
 import com.example.northlordv2.ProfileFeature.ChangePictureFeature.PictureChanger;
@@ -21,7 +22,11 @@ import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-@Module(includes = {OkHttpClientModule.class})
+@Module(includes = ContextModule.class)
 public class CarInfoModule {
-
+    @Provides
+    @ApplicationScope
+    public CarRentDataAdapter getAdapter(@ApplicationContext Context context){
+        return new CarRentDataAdapter(context);
+    }
 }

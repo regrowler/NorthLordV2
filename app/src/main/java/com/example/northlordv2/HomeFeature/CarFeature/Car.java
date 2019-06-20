@@ -4,6 +4,8 @@ package com.example.northlordv2.HomeFeature.CarFeature;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.net.URLDecoder;
+
 public class Car  {
 
     public int getId() {
@@ -55,6 +57,15 @@ public class Car  {
     @SerializedName("id")
     @Expose
     private int id;
+    public void decode(){
+        try {
+            this.setLabel(URLDecoder.decode(getLabel(),"UTF-8"));
+            this.setModel(URLDecoder.decode(getModel(),"UTF-8"));
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+    }
     public Car(int id, String label, String model, int cost, int rentcost){
         this.id=id;
         Label=label;
